@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo Pincéis Arte Sedução</title>
+  <style>
+    html, body {
+      background: #fbe5ee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      width: 100vw;
+    }
+    .interno-catalogo {
+      margin: 0 auto;
+    }
+    .titulo-catalogo {
+      text-align: center;
+      font-size: 28px;
+      color: #d60087;
+      padding: 20px 0 8px 0;
+      font-weight: bold;
+      margin-bottom: 13px;
+      letter-spacing: 0.5px;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px 2px;
+      margin: 0 auto;
+    }
+    .produto {
+      background: #fff;
+      border-radius: 13px;
+      border: 1.5px solid #ffe3f3;
+      box-shadow: 0 1px 8px rgba(214,0,135,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 6px 18px 6px;
+      text-align: center;
+      width: 210px;
+      height: 370px;
+      box-sizing: border-box;
+    }
+    .produto img {
+      width: 165px;
+      height: 165px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #fff4fb;
+      border: 1.5px solid #ffe3f3;
+      margin-bottom: 10px;
+      margin-top: 3px;
+      box-shadow: 0 1px 3px rgba(214,0,135,0.07);
+    }
+    .nome {
+      font-size: 13px;
+      font-weight: bold;
+      color: #d60087;
+      min-height: 44px;
+      max-height: 48px;
+      margin: 0 0 10px 0;
+      line-height: 1.17em;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      word-break: break-word;
+    }
+
+    .preco {
+      font-size: 16px;
+      font-weight: bold;
+      color: #7d21a8;
+      margin: 4px 0;
+    }
+    .dados {
+      font-size: 11px;
+      color: #675268;
+      font-family: 'Courier New', Courier, monospace;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .acoes {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 4px;
+    }
+    button {
+      background: #d60087;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    #pedido {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: 2px solid #d60087;
+      padding: 15px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    #pedido h3 {
+      margin-top: 0;
+      color: #d60087;
+      font-size: 16px;
+    }
+    #lista-pedido {
+      font-size: 13px;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #total {
+      font-weight: bold;
+      color: #7d21a8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="interno-catalogo">
+      <div class="titulo-catalogo">Catálogo Pincéis Arte Sedução</div>
+      <div class="produtos">
+
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_209cf9ba1d3b443ba97b34299d6fb9c7~mv2.jpg" alt="PI-OSR-01">
+          <div class="nome">Pincel Carga Dupla One Stroke 4 Reto, Arte Sedução</div>
+          <div class="preco">R$ 4,07</div>
+          <div class="dados">SKU: PI-OSR-01<br>EAN: 7898951285392</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PI-OSR-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PI-OSR-01', '7898951285392', 'Pincel Carga Dupla One Stroke 4 Reto, Arte Sedução', 4.0656, 'qtd_PI-OSR-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_8a209f1cef2c4b38b60e89adcbe05486~mv2.jpg" alt="PI-OSC-01">
+          <div class="nome">Pincel Carga Dupla One Stroke 4 Chanfrado</div>
+          <div class="preco">R$ 4,07</div>
+          <div class="dados">SKU: PI-OSC-01<br>EAN: 7898951285408</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PI-OSC-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PI-OSC-01', '7898951285408', 'Pincel Carga Dupla One Stroke 4 Chanfrado', 4.0656, 'qtd_PI-OSC-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_0a64132946064e1593d01f5e726442f7~mv2.jpg" alt="PI-MON-0000">
+          <div class="nome">Pincel de Unha Monofil 0000, Arte Sedução</div>
+          <div class="preco">R$ 4,07</div>
+          <div class="dados">SKU: PI-MON-0000<br>EAN: 7898951285415</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PI-MON-0000" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PI-MON-0000', '7898951285415', 'Pincel de Unha Monofil 0000, Arte Sedução', 4.0656, 'qtd_PI-MON-0000')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_d27a9b69e31347378474569ad1020f35~mv2.jpg" alt="PI-RED-00">
+          <div class="nome">Pincel Nail Art Redondo TAM.00, Arte Sedução</div>
+          <div class="preco">R$ 3,70</div>
+          <div class="dados">SKU: PI-RED-00<br>EAN: 7898951285422</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PI-RED-00" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PI-RED-00', '7898951285422', 'Pincel Nail Art Redondo TAM.00, Arte Sedução', 3.696, 'qtd_PI-RED-00')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_a00dccc90e0f4bbbacbbbe591b1f60de~mv2.jpg" alt="PI-RED-000">
+          <div class="nome">Pincel Nail Art Redondo TAM.000, Arte Sedução</div>
+          <div class="preco">R$ 3,70</div>
+          <div class="dados">SKU: PI-RED-000<br>EAN: 7898951285439</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PI-RED-000" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PI-RED-000', '7898951285439', 'Pincel Nail Art Redondo TAM.000, Arte Sedução', 3.696, 'qtd_PI-RED-000')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_2b2f60e773e74eeea4a43eb6b1a6a807~mv2.jpg" alt="PI-PEG-01">
+          <div class="nome">Pincel Pega Strass, Arte Sedução</div>
+          <div class="preco">R$ 4,07</div>
+          <div class="dados">SKU: PI-PEG-01<br>EAN: 7898951285446</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PI-PEG-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PI-PEG-01', '7898951285446', 'Pincel Pega Strass, Arte Sedução', 4.0656, 'qtd_PI-PEG-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_247860a8c86b49b685833dd7b25a72cf~mv2.jpg" alt="KIT-PIN-06">
+          <div class="nome">Kit 6 Pinceis Unha para Decoração Nail Art, Arte Sedução</div>
+          <div class="preco">R$ 23,65</div>
+          <div class="dados">SKU: KIT-PIN-06<br>EAN: 7898951285132</div>
+          <div class="acoes">
+            <input type="number" id="qtd_KIT-PIN-06" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('KIT-PIN-06', '7898951285132', 'Kit 6 Pinceis Unha para Decoração Nail Art, Arte Sedução', 23.6544, 'qtd_KIT-PIN-06')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_47fe51e495ca4a19a6d33e6795082b70~mv2.jpg" alt="HEN-DOS-01">
+          <div class="nome">Pincel Dosador de Henna para Sobrancelhas, Arte Sedução</div>
+          <div class="preco">R$ 2,35</div>
+          <div class="dados">SKU: HEN-DOS-01<br>EAN: 7898965463960</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-DOS-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-DOS-01', '7898965463960', 'Pincel Dosador de Henna para Sobrancelhas, Arte Sedução', 2.352, 'qtd_HEN-DOS-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_5535b395097240efbb8e78b1db905e25~mv2.jpg" alt="HEN-CRE-01">
+          <div class="nome">Pincel Henna Sobrancelha Dupla Função Chanfrado e Redondo</div>
+          <div class="preco">R$ 6,72</div>
+          <div class="dados">SKU: HEN-CRE-01<br>EAN: 7898965463922</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-CRE-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-CRE-01', '7898965463922', 'Pincel Henna Sobrancelha Dupla Função Chanfrado e Redondo', 6.72, 'qtd_HEN-CRE-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_092020584804407485c9b4d3c6dd1360~mv2.jpg" alt="HEN-CHP-01">
+          <div class="nome">Pincel Henna Sobrancelha Dupla Função Chanfrado Ponta Palito</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: HEN-CHP-01<br>EAN: 7898697100294</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-CHP-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-CHP-01', '7898697100294', 'Pincel Henna Sobrancelha Dupla Função Chanfrado Ponta Palito', 5.88, 'qtd_HEN-CHP-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_d9ac058fe01a468dbc743c959c20fd0f~mv2.jpg" alt="HEN-RED-01">
+          <div class="nome">Pincel Redondo para Henna em Sobrancelha, Arte Sedução</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: HEN-RED-01<br>EAN: 7898965463953</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-RED-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-RED-01', '7898965463953', 'Pincel Redondo para Henna em Sobrancelha, Arte Sedução', 5.88, 'qtd_HEN-RED-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_bb614162f48e4ec38571796375831e9c~mv2.jpg" alt="HEN-CHN-01">
+          <div class="nome">Pincel Chanfrado para Henna Sobrancelha, Arte Sedução</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: HEN-CHN-01<br>EAN: 7898965463946</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-CHN-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-CHN-01', '7898965463946', 'Pincel Chanfrado para Henna Sobrancelha, Arte Sedução', 5.88, 'qtd_HEN-CHN-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_5abf86610d1c4f8c9515944be717b3ad~mv2.jpg" alt="HEN-ANG-01">
+          <div class="nome">Pincel Angular para Henna em Sobrancelha, Arte Sedução</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: HEN-ANG-01<br>EAN: 7898965463939</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-ANG-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-ANG-01', '7898965463939', 'Pincel Angular para Henna em Sobrancelha, Arte Sedução', 5.88, 'qtd_HEN-ANG-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_5d94e481fdc54e2bbf44b25524871c74~mv2.jpg" alt="HEN-KIT-06">
+          <div class="nome">Kit 6 Pinceis Profissionais Henna Sobrancelha, Arte Sedução</div>
+          <div class="preco">R$ 32,59</div>
+          <div class="dados">SKU: HEN-KIT-06<br>EAN: 7898697100829</div>
+          <div class="acoes">
+            <input type="number" id="qtd_HEN-KIT-06" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('HEN-KIT-06', '7898697100829', 'Kit 6 Pinceis Profissionais Henna Sobrancelha, Arte Sedução', 32.592, 'qtd_HEN-KIT-06')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/601292_bf42b48687df4217829daf9d58aaae17~mv2.jpg" alt="PIN-GEL-01">
+          <div class="nome">Pincel Unhas de Gel Aplicação Acrigel Nail Art, Arte Sedução</div>
+          <div class="preco">R$ 7,56</div>
+          <div class="dados">SKU: PIN-GEL-01<br>EAN: 7898965463977</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PIN-GEL-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PIN-GEL-01', '7898965463977', 'Pincel Unhas de Gel Aplicação Acrigel Nail Art, Arte Sedução', 7.56, 'qtd_PIN-GEL-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/e8f57f_dc94d3bed2c443938cee1c35f8b448c3~mv2.jpg" alt="ESPN-MTCL-01">
+          <div class="nome">Pincel Espanador de Pó Unhas de Gel Fibra Vidro Arte Sedução Cor:Multicolor</div>
+          <div class="preco">R$ 8,18</div>
+          <div class="dados">SKU: ESPN-MTCL-01<br>EAN: 1</div>
+          <div class="acoes">
+            <input type="number" id="qtd_ESPN-MTCL-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('ESPN-MTCL-01', '1', 'Pincel Espanador de Pó Unhas de Gel Fibra Vidro Arte Sedução Cor:Multicolor', 8.1816, 'qtd_ESPN-MTCL-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_59c876bd7e374b3f87bf193182f6634c~mv2.jpg" alt="PINC-ESCV-50">
+          <div class="nome">50 Pinceis Escovas Descartaveis P/ Cilios Sobrancelhas</div>
+          <div class="preco">R$ 5,04</div>
+          <div class="dados">SKU: PINC-ESCV-50<br>EAN: 7898697100980</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PINC-ESCV-50" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PINC-ESCV-50', '7898697100980', '50 Pinceis Escovas Descartaveis P/ Cilios Sobrancelhas', 5.04, 'qtd_PINC-ESCV-50')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_3cfc7363a00e40af8ae2d5e2809810f4~mv2.jpg" alt="PINC-SERE-01">
+          <div class="nome">Kit 4 Pincéis para Maquiagem Sereia Pó Blush Contorno</div>
+          <div class="preco">R$ 7,56</div>
+          <div class="dados">SKU: PINC-SERE-01<br>EAN: 7898697105633</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PINC-SERE-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PINC-SERE-01', '7898697105633', 'Kit 4 Pincéis para Maquiagem Sereia Pó Blush Contorno', 7.56, 'qtd_PINC-SERE-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/e8f57f_80290502d6bc48929aaf7739396f454a~mv2.jpg" alt="PINC-ESCV-ROSA-50">
+          <div class="nome">50 Pinceis Escovinhas Descartaveis Cilios Sobrancelhas Rosa</div>
+          <div class="preco">R$ 4,49</div>
+          <div class="dados">SKU: PINC-ESCV-ROSA-50<br>EAN: 7898697106104</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PINC-ESCV-ROSA-50" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PINC-ESCV-ROSA-50', '7898697106104', '50 Pinceis Escovinhas Descartaveis Cilios Sobrancelhas Rosa', 4.4856, 'qtd_PINC-ESCV-ROSA-50')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_6d99d2a7d17444869406776b5f909a3a~mv2.jpg" alt="PO-CROMO-COR01">
+          <div class="nome">Pó Cromo Cromado Metalizado Decoração Unhas Gel + Pincel Cor:01#</div>
+          <div class="preco">R$ 2,52</div>
+          <div class="dados">SKU: PO-CROMO-COR01<br>EAN: 7898697106678</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PO-CROMO-COR01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PO-CROMO-COR01', '7898697106678', 'Pó Cromo Cromado Metalizado Decoração Unhas Gel + Pincel Cor:01#', 2.52, 'qtd_PO-CROMO-COR01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_99d44d7b962a4e6ba34fc9078f32971b~mv2.jpg" alt="PO-CROMO-COR02">
+          <div class="nome">Pó Cromo Cromado Metalizado Decoração Unhas Gel + Pincel Cor:02#</div>
+          <div class="preco">R$ 2,52</div>
+          <div class="dados">SKU: PO-CROMO-COR02<br>EAN: 7898697106685</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PO-CROMO-COR02" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PO-CROMO-COR02', '7898697106685', 'Pó Cromo Cromado Metalizado Decoração Unhas Gel + Pincel Cor:02#', 2.52, 'qtd_PO-CROMO-COR02')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_424439f80a35439f828afcf571f0bac3~mv2.jpg" alt="PINC-ESPA-01">
+          <div class="nome">Pincel com Espátula Ponta Dupla 2 em 1 Unhas de Gel Polygel</div>
+          <div class="preco">R$ 8,20</div>
+          <div class="dados">SKU: PINC-ESPA-01<br>EAN: 7898697108078</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PINC-ESPA-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PINC-ESPA-01', '7898697108078', 'Pincel com Espátula Ponta Dupla 2 em 1 Unhas de Gel Polygel', 8.1984, 'qtd_PINC-ESPA-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_3dc86765b53b4a47a94fede88d5cdf60~mv2.jpg" alt="PIN-AQUA-01">
+          <div class="nome">5 Pincéis Decoração de Unhas Gel Acrílico Porcelana Aquarela</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: PIN-AQUA-01<br>EAN: 7898697108467</div>
+          <div class="acoes">
+            <input type="number" id="qtd_PIN-AQUA-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('PIN-AQUA-01', '7898697108467', '5 Pincéis Decoração de Unhas Gel Acrílico Porcelana Aquarela', 5.3256, 'qtd_PIN-AQUA-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_b0b6cd005dd940aa8359e1a11daa17f5~mv2.jpg" alt="9464-01">
+          <div class="nome">Kit 3 Pincéis Design Sobrancelha Chanfrado Pente Escovinha</div>
+          <div class="preco">R$ 4,62</div>
+          <div class="dados">SKU: 9464-01<br>EAN: 7898697109464</div>
+          <div class="acoes">
+            <input type="number" id="qtd_9464-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('9464-01', '7898697109464', 'Kit 3 Pincéis Design Sobrancelha Chanfrado Pente Escovinha', 4.62, 'qtd_9464-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_b35e1fec2bef4e1c998b1c16a7117243~mv2.jpg" alt="9600-01">
+          <div class="nome">Kit 3 Pincéis Sereia Decoração de Unhas Gel Nail Art</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 9600-01<br>EAN: 7898697109600</div>
+          <div class="acoes">
+            <input type="number" id="qtd_9600-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('9600-01', '7898697109600', 'Kit 3 Pincéis Sereia Decoração de Unhas Gel Nail Art', 5.3256, 'qtd_9600-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_4e71480be2944b15944a85c814856760~mv2.jpg" alt="8153-01">
+          <div class="nome">Pincel Bolinha Boleador Decoração Nail Art Unha Arte Sedução</div>
+          <div class="preco">R$ 4,54</div>
+          <div class="dados">SKU: 8153-01<br>EAN: 7898697108153</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8153-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8153-01', '7898697108153', 'Pincel Bolinha Boleador Decoração Nail Art Unha Arte Sedução', 4.536, 'qtd_8153-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/e8f57f_ab473ab631ac4953b2874566197c850f~mv2.jpg" alt="0338-01">
+          <div class="nome">Kit 15 Pinceis Decoração de Unhas + 5 Boleadores Ponta Dupla</div>
+          <div class="preco">R$ 10,08</div>
+          <div class="dados">SKU: 0338-01<br>EAN: 7908639600338</div>
+          <div class="acoes">
+            <input type="number" id="qtd_0338-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('0338-01', '7908639600338', 'Kit 15 Pinceis Decoração de Unhas + 5 Boleadores Ponta Dupla', 10.08, 'qtd_0338-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_4bf9b226c3f844ffbf13762a96cdc58b~mv2.jpg" alt="0529-01">
+          <div class="nome">Kit 5 Pincéis e Boleadores Unha Decoração Nail Art Manicure</div>
+          <div class="preco">R$ 10,08</div>
+          <div class="dados">SKU: 0529-01<br>EAN: 7908639600529</div>
+          <div class="acoes">
+            <input type="number" id="qtd_0529-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('0529-01', '7908639600529', 'Kit 5 Pincéis e Boleadores Unha Decoração Nail Art Manicure', 10.08, 'qtd_0529-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/80341a_100461308c83492eb9f46d44a9c0e670~mv2.jpg" alt="0659-01">
+          <div class="nome">5 Pincéis Decoração de Unhas Gel Aquarela Acrílico Porcelana</div>
+          <div class="preco">R$ 8,40</div>
+          <div class="dados">SKU: 0659-01<br>EAN: 7908639600659</div>
+          <div class="acoes">
+            <input type="number" id="qtd_0659-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('0659-01', '7908639600659', '5 Pincéis Decoração de Unhas Gel Aquarela Acrílico Porcelana', 8.4, 'qtd_0659-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_0f69a32ac65246d4a292ea7317fc5178~mv2.jpg" alt="2004-01">
+          <div class="nome">Escovinha de Aço Para Limpeza de Brocas Pinceis Unhas</div>
+          <div class="preco">R$ 3,36</div>
+          <div class="dados">SKU: 2004-01<br>EAN: 7908639602004</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2004-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2004-01', '7908639602004', 'Escovinha de Aço Para Limpeza de Brocas Pinceis Unhas', 3.36, 'qtd_2004-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_3ffbe93dee0546d58ac99727bac3f796~mv2.jpg" alt="2172-01">
+          <div class="nome">Kit 3 Pincéis Finos Decoração Gel Nail Art Unhas Sereia</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 2172-01<br>EAN: 7908639602172</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2172-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2172-01', '7908639602172', 'Kit 3 Pincéis Finos Decoração Gel Nail Art Unhas Sereia', 5.3256, 'qtd_2172-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_fcbb9ac9d449494488920cb4a48a8781~mv2.jpg" alt="2240-01">
+          <div class="nome">Kit 15 Pinceis Decoração de Unhas Gel Nail Art Branco</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 2240-01<br>EAN: 7908639602240</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2240-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2240-01', '7908639602240', 'Kit 15 Pinceis Decoração de Unhas Gel Nail Art Branco', 5.3256, 'qtd_2240-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_389f25245af244d18349a404242c2a94~mv2.jpg" alt="nan">
+          <div class="nome">Pincel Facial Oval Preto para Aplicação de Base Cor:Preto</div>
+          <div class="preco">R$ 5,31</div>
+          <div class="dados">SKU: nan<br>EAN: 7908639602516</div>
+          <div class="acoes">
+            <input type="number" id="qtd_nan" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('nan', '7908639602516', 'Pincel Facial Oval Preto para Aplicação de Base Cor:Preto', 5.3088, 'qtd_nan')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_2b1aa0c2d4f34197a7536d105f207708~mv2.jpg" alt="nan">
+          <div class="nome">Pincel Facial Oval Preto para Aplicação de Base Cor:Rosa</div>
+          <div class="preco">R$ 5,31</div>
+          <div class="dados">SKU: nan<br>EAN: 7908639602523</div>
+          <div class="acoes">
+            <input type="number" id="qtd_nan" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('nan', '7908639602523', 'Pincel Facial Oval Preto para Aplicação de Base Cor:Rosa', 5.3088, 'qtd_nan')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_c6fa57d2f3b44c47b69f17fbfee144c6~mv2.jpg" alt="3124-01">
+          <div class="nome">Kit 3 Pinceis Ultra Finos Nail Art Decoração de Unhas</div>
+          <div class="preco">R$ 5,31</div>
+          <div class="dados">SKU: 3124-01<br>EAN: 7908639603124</div>
+          <div class="acoes">
+            <input type="number" id="qtd_3124-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('3124-01', '7908639603124', 'Kit 3 Pinceis Ultra Finos Nail Art Decoração de Unhas', 5.3088, 'qtd_3124-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_cc920d11e36844f4a4d90eb1fdff14a7~mv2.jpg" alt="3131-01">
+          <div class="nome">Kit 7 Pinceis Unhas de Gel Alongamento Nail Art Decoração</div>
+          <div class="preco">R$ 10,08</div>
+          <div class="dados">SKU: 3131-01<br>EAN: 7908639603131</div>
+          <div class="acoes">
+            <input type="number" id="qtd_3131-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('3131-01', '7908639603131', 'Kit 7 Pinceis Unhas de Gel Alongamento Nail Art Decoração', 10.08, 'qtd_3131-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_a0a24edf5daa4695a17e32aa638077b3~mv2.jpg" alt="3155-01">
+          <div class="nome">Kit 6 Pinceis + 1 Boleador Rosa Decoração de Unhas Nail Art</div>
+          <div class="preco">R$ 7,01</div>
+          <div class="dados">SKU: 3155-01<br>EAN: 7908639603155</div>
+          <div class="acoes">
+            <input type="number" id="qtd_3155-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('3155-01', '7908639603155', 'Kit 6 Pinceis + 1 Boleador Rosa Decoração de Unhas Nail Art', 7.0056, 'qtd_3155-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_8283856169f84234a15c466bbcdf1b67~mv2.jpg" alt="3957-01">
+          <div class="nome">Kit 3 Pincéis Sereia Ultra Fino Filete Decoração De Unhas</div>
+          <div class="preco">R$ 4,62</div>
+          <div class="dados">SKU: 3957-01<br>EAN: 7908639603957</div>
+          <div class="acoes">
+            <input type="number" id="qtd_3957-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('3957-01', '7908639603957', 'Kit 3 Pincéis Sereia Ultra Fino Filete Decoração De Unhas', 4.62, 'qtd_3957-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_b12b8796060a4518a78afb82cbe55d4e~mv2.jpg" alt="2904-01">
+          <div class="nome">Kit 3 Pincéis Ponta Dupla Decoração Unhas Gel Fibra Nail Art</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: 2904-01<br>EAN: 7908639612904</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2904-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2904-01', '7908639612904', 'Kit 3 Pincéis Ponta Dupla Decoração Unhas Gel Fibra Nail Art', 5.88, 'qtd_2904-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_fd81dd65771240a4becd83c7628c7652~mv2.jpg" alt="4169-01">
+          <div class="nome">Kit 3 Pinceis 2 Pontas Unhas Gel Acrigel Decoração Manicure Preto</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: 4169-01<br>EAN: 7908639604169</div>
+          <div class="acoes">
+            <input type="number" id="qtd_4169-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('4169-01', '7908639604169', 'Kit 3 Pinceis 2 Pontas Unhas Gel Acrigel Decoração Manicure Preto', 5.88, 'qtd_4169-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_b9751b9d4a6d400d9e68fe4eb72ace3e~mv2.jpg" alt="4251-01">
+          <div class="nome">Kit 8 Pinceis Artesanais Nail Art Decoração de Unhas Flores</div>
+          <div class="preco">R$ 18,01</div>
+          <div class="dados">SKU: 4251-01<br>EAN: 7908639604251</div>
+          <div class="acoes">
+            <input type="number" id="qtd_4251-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('4251-01', '7908639604251', 'Kit 8 Pinceis Artesanais Nail Art Decoração de Unhas Flores', 18.0096, 'qtd_4251-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_f49fa2e5970347b88f63ccde6f060780~mv2.jpg" alt="4350-01">
+          <div class="nome">Kit 3 Pincéis Limpeza de Alongamento de Cílios Makeup Argila</div>
+          <div class="preco">R$ 5,04</div>
+          <div class="dados">SKU: 4350-01<br>EAN: 7908639604350</div>
+          <div class="acoes">
+            <input type="number" id="qtd_4350-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('4350-01', '7908639604350', 'Kit 3 Pincéis Limpeza de Alongamento de Cílios Makeup Argila', 5.04, 'qtd_4350-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_3ce452a2866142688a7810ebfb8b10c6~mv2.jpg" alt="7542-01">
+          <div class="nome">Suporte Grade Apoiador Pincel Manicure Make 5 Divisórias</div>
+          <div class="preco">R$ 3,36</div>
+          <div class="dados">SKU: 7542-01<br>EAN: 7908639607542</div>
+          <div class="acoes">
+            <input type="number" id="qtd_7542-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('7542-01', '7908639607542', 'Suporte Grade Apoiador Pincel Manicure Make 5 Divisórias', 3.36, 'qtd_7542-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_40e5b007108043a4b4c826d95cb92409~mv2.jpg" alt="7658-01">
+          <div class="nome">Kit 3 Pincéis Sobrancelha + 1 Marcador Silicone Maquiagem</div>
+          <div class="preco">R$ 7,69</div>
+          <div class="dados">SKU: 7658-01<br>EAN: 7908639607658</div>
+          <div class="acoes">
+            <input type="number" id="qtd_7658-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('7658-01', '7908639607658', 'Kit 3 Pincéis Sobrancelha + 1 Marcador Silicone Maquiagem', 7.6944, 'qtd_7658-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_4eb1b7a9bcfd44f682c14862fc4244f8~mv2.jpg" alt="7665-01">
+          <div class="nome">Porta Pincel Acrílico 12 Lugares Formato Coração Organização</div>
+          <div class="preco">R$ 21,29</div>
+          <div class="dados">SKU: 7665-01<br>EAN: 7908639607665</div>
+          <div class="acoes">
+            <input type="number" id="qtd_7665-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('7665-01', '7908639607665', 'Porta Pincel Acrílico 12 Lugares Formato Coração Organização', 21.2856, 'qtd_7665-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_c10df7744d0f45219998b1ee90af8395~mv2.jpg" alt="7702-01">
+          <div class="nome">Kit 50 Pincel Escova + 100 Palito Algodão Sobrancelha Unhas</div>
+          <div class="preco">R$ 7,39</div>
+          <div class="dados">SKU: 7702-01<br>EAN: 7908639607702</div>
+          <div class="acoes">
+            <input type="number" id="qtd_7702-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('7702-01', '7908639607702', 'Kit 50 Pincel Escova + 100 Palito Algodão Sobrancelha Unhas', 7.392, 'qtd_7702-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_5c971931c464425893f9ba2e8e523221~mv2.jpg" alt="7757-01">
+          <div class="nome">Kit Skin Care Argila Frasco Esponja Espátula Pincel Colher</div>
+          <div class="preco">R$ 12,60</div>
+          <div class="dados">SKU: 7757-01<br>EAN: 7908639607757</div>
+          <div class="acoes">
+            <input type="number" id="qtd_7757-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('7757-01', '7908639607757', 'Kit Skin Care Argila Frasco Esponja Espátula Pincel Colher', 12.6, 'qtd_7757-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_d61ade972bc64d1397b563856a749d12~mv2.jpg" alt="7986-01">
+          <div class="nome">Pincel Ergonômico Cerdas Grandes Macias Maquiagem Pó Blush</div>
+          <div class="preco">R$ 6,72</div>
+          <div class="dados">SKU: 7986-01<br>EAN: 7908639607986</div>
+          <div class="acoes">
+            <input type="number" id="qtd_7986-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('7986-01', '7908639607986', 'Pincel Ergonômico Cerdas Grandes Macias Maquiagem Pó Blush', 6.72, 'qtd_7986-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_5b183ffdbf824feea81fb44064f61bca~mv2.jpg" alt="8044-01">
+          <div class="nome">Pincel 2 Pontas Silicone e Redonda Pega Strass Glitter Unhas</div>
+          <div class="preco">R$ 6,72</div>
+          <div class="dados">SKU: 8044-01<br>EAN: 7908639608044</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8044-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8044-01', '7908639608044', 'Pincel 2 Pontas Silicone e Redonda Pega Strass Glitter Unhas', 6.72, 'qtd_8044-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_8a4af807bd04489aa0994f580f67ca85~mv2.jpg" alt="8204-01">
+          <div class="nome">Kit 5 Pincéis Maquiagem Rosa Rosto Make-Up Pó Sombra Batom</div>
+          <div class="preco">R$ 3,07</div>
+          <div class="dados">SKU: 8204-01<br>EAN: 7908639608204</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8204-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8204-01', '7908639608204', 'Kit 5 Pincéis Maquiagem Rosa Rosto Make-Up Pó Sombra Batom', 3.0744, 'qtd_8204-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_cae49ed853774fa0906a4afe693deb43~mv2.jpg" alt="8365-01">
+          <div class="nome">Kit 8 Pincéis Maquiagem Olhos Sobrancelha + Esponja Veludo</div>
+          <div class="preco">R$ 11,76</div>
+          <div class="dados">SKU: 8365-01<br>EAN: 7908639608365</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8365-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8365-01', '7908639608365', 'Kit 8 Pincéis Maquiagem Olhos Sobrancelha + Esponja Veludo', 11.76, 'qtd_8365-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_07bb413490be4ad291bc4a5c0355aabf~mv2.jpg" alt="8372-01">
+          <div class="nome">Kit 7 Pincéis Unhas Acrílicas Gel Fibra Vidro Nail Designer</div>
+          <div class="preco">R$ 9,51</div>
+          <div class="dados">SKU: 8372-01<br>EAN: 7908639608372</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8372-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8372-01', '7908639608372', 'Kit 7 Pincéis Unhas Acrílicas Gel Fibra Vidro Nail Designer', 9.5088, 'qtd_8372-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_322856aa783641baab0a9418f56a4577~mv2.jpg" alt="8419-01">
+          <div class="nome">Kit 7 Pincéis Olhos Sobrancelha Detalhe Acabamento Maquiagem</div>
+          <div class="preco">R$ 6,99</div>
+          <div class="dados">SKU: 8419-01<br>EAN: 7908639608419</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8419-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8419-01', '7908639608419', 'Kit 7 Pincéis Olhos Sobrancelha Detalhe Acabamento Maquiagem', 6.9888, 'qtd_8419-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_e411c80d317747889f4bcc4f555cb474~mv2.jpg" alt="8679-01">
+          <div class="nome">Kit 12 Pincel Duplo Escovinha Chanfrado Sobrancelha Cílios</div>
+          <div class="preco">R$ 13,44</div>
+          <div class="dados">SKU: 8679-01<br>EAN: 7908639608679</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8679-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8679-01', '7908639608679', 'Kit 12 Pincel Duplo Escovinha Chanfrado Sobrancelha Cílios', 13.44, 'qtd_8679-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_f124b92b30e0454aa934033f99af37c5~mv2.jpg" alt="8686-01">
+          <div class="nome">Kit 5 Pincel Maquiagem Bolsa Estojo Espelho Cerdas Macias</div>
+          <div class="preco">R$ 10,08</div>
+          <div class="dados">SKU: 8686-01<br>EAN: 7908639608686</div>
+          <div class="acoes">
+            <input type="number" id="qtd_8686-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('8686-01', '7908639608686', 'Kit 5 Pincel Maquiagem Bolsa Estojo Espelho Cerdas Macias', 10.08, 'qtd_8686-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_c0c17089ffec4ca091e2061ee53e9ec9~mv2.jpg" alt="9256-01">
+          <div class="nome">Pincel Mágico Oval Maquiagem Aplicação de Base Cerdas Macias</div>
+          <div class="preco">R$ 5,88</div>
+          <div class="dados">SKU: 9256-01<br>EAN: 7908639609256</div>
+          <div class="acoes">
+            <input type="number" id="qtd_9256-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('9256-01', '7908639609256', 'Pincel Mágico Oval Maquiagem Aplicação de Base Cerdas Macias', 5.88, 'qtd_9256-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_0bdde5c37f6942c1a57e012669bd29d8~mv2.jpg" alt="9270-01">
+          <div class="nome">Pincel Mágico Maquiagem Curva S Base Pó Contorno Cabo Taça</div>
+          <div class="preco">R$ 7,01</div>
+          <div class="dados">SKU: 9270-01<br>EAN: 7908639609270</div>
+          <div class="acoes">
+            <input type="number" id="qtd_9270-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('9270-01', '7908639609270', 'Pincel Mágico Maquiagem Curva S Base Pó Contorno Cabo Taça', 7.0056, 'qtd_9270-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_c16e7282e6d64f9285c8db3baad6ffd7~mv2.jpg" alt="1464-01">
+          <div class="nome">Kit 12 Pinceis Ponta Fina Decoração Unhas Make Delineado</div>
+          <div class="preco">R$ 14,28</div>
+          <div class="dados">SKU: 1464-01<br>EAN: 7908639611464</div>
+          <div class="acoes">
+            <input type="number" id="qtd_1464-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('1464-01', '7908639611464', 'Kit 12 Pinceis Ponta Fina Decoração Unhas Make Delineado', 14.28, 'qtd_1464-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_b22b495f80f641c19f9489d924f3c1e5~mv2.jpg" alt="10078-01">
+          <div class="nome">Kit 1 Pincel Mágico + 3 Esponjas Maquiagem Pó Base Corretivo</div>
+          <div class="preco">R$ 14,28</div>
+          <div class="dados">SKU: 10078-01<br>EAN: 7908639610078</div>
+          <div class="acoes">
+            <input type="number" id="qtd_10078-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('10078-01', '7908639610078', 'Kit 1 Pincel Mágico + 3 Esponjas Maquiagem Pó Base Corretivo', 14.28, 'qtd_10078-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_01f2dc24bd244b739f2774b3a65bf4aa~mv2.jpg" alt="9911-01">
+          <div class="nome">Kit 15 Pincéis Preto Unha Gel Profissional Manicure Designer</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 9911-01<br>EAN: 7908639609911</div>
+          <div class="acoes">
+            <input type="number" id="qtd_9911-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('9911-01', '7908639609911', 'Kit 15 Pincéis Preto Unha Gel Profissional Manicure Designer', 5.3256, 'qtd_9911-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_4fd2ee2090754bed84b31e6145281829~mv2.jpg" alt="10702-01">
+          <div class="nome">Pincel Pequeno Cabo Ergonômico Maquiagem Blush Rosto Makeup</div>
+          <div class="preco">R$ 8,40</div>
+          <div class="dados">SKU: 10702-01<br>EAN: 7908639610702</div>
+          <div class="acoes">
+            <input type="number" id="qtd_10702-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('10702-01', '7908639610702', 'Pincel Pequeno Cabo Ergonômico Maquiagem Blush Rosto Makeup', 8.4, 'qtd_10702-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_1a21d62f3e4a4390968540531e54740a~mv2.jpg" alt="1426-01">
+          <div class="nome">Kit Pincel Mágico Oval + Esponja Base Rosto Pele Maquiagem</div>
+          <div class="preco">R$ 6,72</div>
+          <div class="dados">SKU: 1426-01<br>EAN: 7908639611426</div>
+          <div class="acoes">
+            <input type="number" id="qtd_1426-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('1426-01', '7908639611426', 'Kit Pincel Mágico Oval + Esponja Base Rosto Pele Maquiagem', 6.72, 'qtd_1426-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_ab15efd299d7462daa0e9853547bbd4d~mv2.jpg" alt="2744-01">
+          <div class="nome">1 Unidade Pó Cromado Metalizado Dourado Unhas de Gel + Pincel</div>
+          <div class="preco">R$ 2,52</div>
+          <div class="dados">SKU: 2744-01<br>EAN: 7908639612744</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2744-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2744-01', '7908639612744', '1 Unidade Pó Cromado Metalizado Dourado Unhas de Gel + Pincel', 2.52, 'qtd_2744-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_a184a82d1c40494cbbd119ffff01dab7~mv2.jpg" alt="2720-01">
+          <div class="nome">1 Unidade Pó Cromado Metalizado Prata Unhas de Gel + Pincel</div>
+          <div class="preco">R$ 2,52</div>
+          <div class="dados">SKU: 2720-01<br>EAN: 7908639612720</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2720-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2720-01', '7908639612720', '1 Unidade Pó Cromado Metalizado Prata Unhas de Gel + Pincel', 2.52, 'qtd_2720-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_aa9c232d62654492b2d4e1a9480c34c2~mv2.jpg" alt="2881-01">
+          <div class="nome">Pincel Pompom Espanador Maquiagem Base Blush Pó Unha Acrigel</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 2881-01<br>EAN: 7908639612881</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2881-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2881-01', '7908639612881', 'Pincel Pompom Espanador Maquiagem Base Blush Pó Unha Acrigel', 5.3256, 'qtd_2881-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_f94023a7dd6e4c179492c654899a4b8f~mv2.jpg" alt="2775-01">
+          <div class="nome">Lenço Coração Limpeza Utensílios Pinças Removedor Pincel Gel</div>
+          <div class="preco">R$ 7,37</div>
+          <div class="dados">SKU: 2775-01<br>EAN: 7908639612775</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2775-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2775-01', '7908639612775', 'Lenço Coração Limpeza Utensílios Pinças Removedor Pincel Gel', 7.371, 'qtd_2775-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_40eb00bfb970445a8b4ad954b4ce2dc6~mv2.jpg" alt="2171-01">
+          <div class="nome">Kit 3 Pincéis Sereia Alongamento Unha Nail Design Porcelana</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 2171-01<br>EAN: 7908639612171</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2171-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2171-01', '7908639612171', 'Kit 3 Pincéis Sereia Alongamento Unha Nail Design Porcelana', 5.3256, 'qtd_2171-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_c9132b38cebd41be8fbada718a068d81~mv2.jpg" alt="2164-01">
+          <div class="nome">Kit 3 Pincéis Sereia Língua de Gato Unha Gel Fibra Nail Art</div>
+          <div class="preco">R$ 5,33</div>
+          <div class="dados">SKU: 2164-01<br>EAN: 7908639612164</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2164-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2164-01', '7908639612164', 'Kit 3 Pincéis Sereia Língua de Gato Unha Gel Fibra Nail Art', 5.3256, 'qtd_2164-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_6a2385cc303d448884ce94deed0d762c~mv2.jpg" alt="2263-01">
+          <div class="nome">Kit 24 Pincéis de Maquiagem Delineado Sombra Blush + Estojo</div>
+          <div class="preco">R$ 26,04</div>
+          <div class="dados">SKU: 2263-01<br>EAN: 7908639612263</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2263-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2263-01', '7908639612263', 'Kit 24 Pincéis de Maquiagem Delineado Sombra Blush + Estojo', 26.04, 'qtd_2263-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_941f2a0009204185b880146314e03bf3~mv2.jpg" alt="2256-01">
+          <div class="nome">Espanador Pincel Escova Madeira Cerdas Macias Profissional</div>
+          <div class="preco">R$ 13,44</div>
+          <div class="dados">SKU: 2256-01<br>EAN: 7908639612256</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2256-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2256-01', '7908639612256', 'Espanador Pincel Escova Madeira Cerdas Macias Profissional', 13.44, 'qtd_2256-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_a57a0b016c4949f580f577df6fee37a2~mv2.jpg" alt="2706-01">
+          <div class="nome">Kit 7 Pincéis Língua de Gato Marmorizado Rosa Manicure Unhas</div>
+          <div class="preco">R$ 11,42</div>
+          <div class="dados">SKU: 2706-01<br>EAN: 7908639612706</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2706-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2706-01', '7908639612706', 'Kit 7 Pincéis Língua de Gato Marmorizado Rosa Manicure Unhas', 11.424, 'qtd_2706-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_fa8ee0f577d0491b9b2b169c28e22164~mv2.jpg" alt="2522-01">
+          <div class="nome">Kit 50 Pincéis Ponta Fina Delineado Make Olho Decoração Unha</div>
+          <div class="preco">R$ 6,72</div>
+          <div class="dados">SKU: 2522-01<br>EAN: 7908639612522</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2522-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2522-01', '7908639612522', 'Kit 50 Pincéis Ponta Fina Delineado Make Olho Decoração Unha', 6.72, 'qtd_2522-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_8c06d65f837044bebc805f6429fb54b4~mv2.jpg" alt="2690-01">
+          <div class="nome">Kit 5 Pincéis Cerdas Retas para Modelagem Alongamento Unhas</div>
+          <div class="preco">R$ 5,04</div>
+          <div class="dados">SKU: 2690-01<br>EAN: 7908639612690</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2690-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2690-01', '7908639612690', 'Kit 5 Pincéis Cerdas Retas para Modelagem Alongamento Unhas', 5.04, 'qtd_2690-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/1e750e_12ce2e90e88b4fd4a5b758b5dbe1c3cb~mv2.jpg" alt="2713-01">
+          <div class="nome">Kit 5 Pincéis Silicone Manicure Decoração Removedor Unhas</div>
+          <div class="preco">R$ 8,74</div>
+          <div class="dados">SKU: 2713-01<br>EAN: 7908639612713</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2713-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2713-01', '7908639612713', 'Kit 5 Pincéis Silicone Manicure Decoração Removedor Unhas', 8.736, 'qtd_2713-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_d246fa92e8be4612ad1fff52a4f58ebc~mv2.jpg" alt="2737-01">
+          <div class="nome">Kit 6 Pó Cromado Metalizado Prata Unhas de Gel + Pincéis</div>
+          <div class="preco">R$ 15,12</div>
+          <div class="dados">SKU: 2737-01<br>EAN: 7908639612737</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2737-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2737-01', '7908639612737', 'Kit 6 Pó Cromado Metalizado Prata Unhas de Gel + Pincéis', 15.12, 'qtd_2737-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_4448fe44e7bc48a7954cd31e74f6979e~mv2.jpg" alt="2751-01">
+          <div class="nome">Kit 6 Pó Cromado Metalizado Dourado Unhas de Gel + 6 Pincéis</div>
+          <div class="preco">R$ 15,12</div>
+          <div class="dados">SKU: 2751-01<br>EAN: 7908639612751</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2751-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2751-01', '7908639612751', 'Kit 6 Pó Cromado Metalizado Dourado Unhas de Gel + 6 Pincéis', 15.12, 'qtd_2751-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+        <div class="produto">
+          <img src="https://static.wixstatic.com/media/21e53f_e832c8cf52314392aa237519428a74de~mv2.jpg" alt="2997-01">
+          <div class="nome">Escova Espanador Pincel Pescoço Ombro Cabo Madeira Barbearia</div>
+          <div class="preco">R$ 13,44</div>
+          <div class="dados">SKU: 2997-01<br>EAN: 7908639612997</div>
+          <div class="acoes">
+            <input type="number" id="qtd_2997-01" min="1" placeholder="Qtd">
+            <button onclick="adicionarAoPedido('2997-01', '7908639612997', 'Escova Espanador Pincel Pescoço Ombro Cabo Madeira Barbearia', 13.44, 'qtd_2997-01')">Adicionar ao pedido</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+
+  <div id="pedido">
+    <h3>Meu Pedido</h3>
+    <ul id="lista-pedido"></ul>
+    <p>Total: R$ <span id="total">0,00</span></p>
+    <button onclick="copiarPedido()">Copiar pedido</button>
+  </div>
+
+  <script>
+    const pedido = {};
+    function adicionarAoPedido(sku, ean, nome, preco, inputId) {
+      const qtd = parseInt(document.getElementById(inputId).value);
+      if (!qtd || qtd <= 0) return alert("Informe uma quantidade válida.");
+      if (!pedido[sku]) {
+        pedido[sku] = { nome, preco, quantidade: qtd, ean };
+      } else {
+        pedido[sku].quantidade += qtd;
+      }
+      atualizarPedido();
+      document.getElementById(inputId).value = "";
+    }
+
+    function atualizarPedido() {
+      const lista = document.getElementById("lista-pedido");
+      const totalSpan = document.getElementById("total");
+      lista.innerHTML = "";
+      let total = 0;
+      for (const sku in pedido) {
+        const item = pedido[sku];
+        const subtotal = item.quantidade * item.preco;
+        total += subtotal;
+        const li = document.createElement("li");
+        li.textContent = `${item.quantidade}x [${sku}] ${item.nome} - EAN: ${item.ean}`;
+        lista.appendChild(li);
+      }
+      totalSpan.textContent = total.toFixed(2).replace('.', ',');
+    }
+
+    function copiarPedido() {
+      let texto = "Pedido Arte Sedução:\n\n";
+      let total = 0;
+      for (const sku in pedido) {
+        const item = pedido[sku];
+        const subtotal = item.quantidade * item.preco;
+        total += subtotal;
+        texto += `- ${item.quantidade}x [${sku}] ${item.nome}\n  EAN: ${item.ean}\n`;
+      }
+      texto += `\nTotal: R$ ${total.toFixed(2).replace('.', ',')}`;
+      navigator.clipboard.writeText(texto)
+        .then(() => alert("Pedido copiado com sucesso!"))
+        .catch(() => alert("Erro ao copiar pedido."));
+    }
+  </script>
+</body>
+</html>
